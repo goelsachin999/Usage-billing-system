@@ -1,0 +1,29 @@
+{
+  "storage": {
+    "billing_type": "flat_per_unit",
+    "unit": "GB-hour",
+    "params": {
+      "rate": "0.02"
+    }
+  },
+  "compute": {
+    "billing_type": "tiered",
+    "unit": "compute-hour",
+    "params": {
+      "tiers": [
+        {"upto": "100", "rate": "0.10"},
+        {"upto": "1000", "rate": "0.08"},
+        {"upto": null, "rate": "0.05"}
+      ]
+    }
+  },
+  "api": {
+    "billing_type": "fixed_subscription_overage",
+    "unit": "call",
+    "params": {
+      "base_fee": "50.00",
+      "included_units": "1000000",
+      "overage_rate": "0.001"
+    }
+  }
+}
